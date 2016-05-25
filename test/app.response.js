@@ -7,7 +7,7 @@ describe('app', function(){
     it('should extend the response prototype', function(done){
       var app = express();
 
-      app.response.shout = function(str){
+      app.responseMixin.shout = function(str){
         this.send(str.toUpperCase());
       };
 
@@ -24,11 +24,11 @@ describe('app', function(){
       var app = express()
         , app2 = express();
 
-      app.response.shout = function(str){
+      app.responseMixin.shout = function(str){
         this.send(str.toUpperCase());
       };
 
-      app2.response.shout = function(str){
+      app2.responseMixin.shout = function(str){
         this.send(str);
       };
 

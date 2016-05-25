@@ -7,7 +7,7 @@ describe('app', function(){
     it('should extend the request prototype', function(done){
       var app = express();
 
-      app.request.querystring = function(){
+      app.requestMixin.querystring = function(){
         return require('url').parse(this.url).query;
       };
 

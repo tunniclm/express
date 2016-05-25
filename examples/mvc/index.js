@@ -21,7 +21,7 @@ app.set('views', __dirname + '/views');
 
 // define a custom res.message() method
 // which stores messages in the session
-app.response.message = function(msg){
+app.responseMixin.message = function(msg){
   // reference `req.session` via the `this.req` reference
   var sess = this.req.session;
   // simply add the msg to an array for later
